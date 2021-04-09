@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 #============================================================================
 #                                タイトル領域
 #============================================================================
-image_1 = Image.open(r"materials\head.png")
+image_1 = Image.open("materials/head.png")
 st.image(image_1, use_column_width=True)
 '''
 下記の各設問について個人の回答を入力すると、欲求のタイプを判定することができます。

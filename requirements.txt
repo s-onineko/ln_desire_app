@@ -1,5 +1,5 @@
 streamlit
-PIL
+Image
 pandas
 plotly.express
 plotly.graph_objs

@@ -147,11 +147,7 @@ if mode == "欲求フラグ判定結果":
     df_rader = pd.DataFrame(values, columns = ['個人スコア'])
     df_mean = pd.DataFrame(values2, columns = ['平均スコア'])
     df_table = pd.merge(df_rader,df_mean,how = "left", left_index=True,right_index=True)
-    '''
-    sort_label = [29,36,38,40,37,39,41,44,42,43,45,46,\
-        1,2,3,4,5,6,7,8,9,10,11,12,13,14,18,15,16,17,19,20,\
-            21,22,23,25,27,28,30,31,32,33,34,35,26,24]
-    '''
+
     sort_label = [35,36,37,38,39,40,41,42,43,44,45,46,\
         1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,\
             21,22,23,24,25,26,27,28,29,30,31,32,33,34]   
@@ -160,7 +156,7 @@ if mode == "欲求フラグ判定結果":
     df_table = df_table.sort_values(by='Number')
     df_table = df_table.reset_index().drop('index', axis=1)
     df_table['差分'] = (df_table['個人スコア'] - df_table['平均スコア'])
-    df_question = pd.read_csv(r"materials\question.csv", encoding = "cp932")
+    df_question = pd.read_csv("materials/question.csv", encoding = "cp932")
     df_table_view = pd.merge(df_question,df_table,how = "left", left_index=True,right_index=True)
     df_table_view = df_table_view.set_index('Number')
     image_0 = Image.open("materials/rader_list.PNG")

@@ -189,7 +189,7 @@ else:
     ##### 7：Ｂに非常に近い\n
     ***
     ''')
-    image_1 = Image.open(r"materials\q1.png")
+    image_1 = Image.open("materials/q1.png")
     st.image(image_1, use_column_width=True)
     q1 = st.selectbox("Q1：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q1 == "1：Ａに非常に近い":

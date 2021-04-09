@@ -1,0 +1,8 @@
+streamlit
+PIL
+subprocess
+pandas
+datetime
+plotly.express
+plotly.graph_objs
+matplotlib.pyplot

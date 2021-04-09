@@ -3,4 +3,4 @@ Image
 pandas
 plotly.express
 plotly
-matplotlib.pyplot
+matplotlib

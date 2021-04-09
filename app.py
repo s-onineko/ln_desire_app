@@ -207,7 +207,7 @@ else:
     else:
         q1 = int(7)
 
-    image_2 = Image.open(r"materials\q2.png")
+    image_2 = Image.open("materials/q2.png")
     st.image(image_2, use_column_width=True)
     q2 = st.selectbox("Q2：1～7から1つお選びください ",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q2 == "1：Ａに非常に近い":
@@ -226,7 +226,7 @@ else:
         q2 = int(7)
 
 
-    image_3 = Image.open(r"materials\q3.png")
+    image_3 = Image.open("materials/q3.png")
     st.image(image_3, use_column_width=True)
     q3 = st.selectbox("Q3：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q3 == "1：Ａに非常に近い":
@@ -245,7 +245,7 @@ else:
         q3 = int(7)
 
 
-    image_4 = Image.open(r"materials\q4.png")
+    image_4 = Image.open("materials/q4.png")
     st.image(image_4, use_column_width=True)
     q4 = st.selectbox("Q4：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q4 == "1：Ａに非常に近い":
@@ -264,7 +264,7 @@ else:
         q4 = int(7)
 
 
-    image_5 = Image.open(r"materials\q5.png")
+    image_5 = Image.open("materials/q5.png")
     st.image(image_5, use_column_width=True)
     q5 = st.selectbox("Q5：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q5 == "1：Ａに非常に近い":
@@ -283,7 +283,7 @@ else:
         q5 = int(7)
 
 
-    image_6 = Image.open(r"materials\q6.png")
+    image_6 = Image.open("materials/q6.png")
     st.image(image_6, use_column_width=True)
     q6 = st.selectbox("Q6：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q6 == "1：Ａに非常に近い":
@@ -302,7 +302,7 @@ else:
         q6 = int(7)
 
 
-    image_7 = Image.open(r"materials\q7.png")
+    image_7 = Image.open("materials/q7.png")
     st.image(image_7, use_column_width=True)
     q7 = st.selectbox("Q7：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q7 == "1：Ａに非常に近い":
@@ -321,7 +321,7 @@ else:
         q7 = int(7)
 
 
-    image_8 = Image.open(r"materials\q8.png")
+    image_8 = Image.open("materials/q8.png")
     st.image(image_8, use_column_width=True)
     q8 = st.selectbox("Q8：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q8 == "1：Ａに非常に近い":
@@ -340,7 +340,7 @@ else:
         q8 = int(7)
 
 
-    image_9 = Image.open(r"materials\q9.png")
+    image_9 = Image.open("materials/q9.png")
     st.image(image_9, use_column_width=True)
     q9 = st.selectbox("Q9：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q9 == "1：Ａに非常に近い":
@@ -358,7 +358,7 @@ else:
     else:
         q9 = int(7)
 
-    image_10 = Image.open(r"materials\q10.png")
+    image_10 = Image.open("materials/q10.png")
     st.image(image_10, use_column_width=True)
     q10 = st.selectbox("Q10：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q10 == "1：Ａに非常に近い":
@@ -377,7 +377,7 @@ else:
         q10 = int(7)
 
 
-    image_11 = Image.open(r"materials\q11.png")
+    image_11 = Image.open("materials/q11.png")
     st.image(image_11, use_column_width=True)
     q11 = st.selectbox("Q11：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q11 == "1：Ａに非常に近い":
@@ -395,7 +395,7 @@ else:
     else:
         q11 = int(7)
 
-    image_12 = Image.open(r"materials\q12.png")
+    image_12 = Image.open("materials/q12.png")
     st.image(image_12, use_column_width=True)
     q12 = st.selectbox("Q12：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q12 == "1：Ａに非常に近い":
@@ -414,7 +414,7 @@ else:
         q12 = int(7)
 
 
-    image_13 = Image.open(r"materials\q13.png")
+    image_13 = Image.open("materials/q13.png")
     st.image(image_13, use_column_width=True)
     q13 = st.selectbox("Q13：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q13 == "1：Ａに非常に近い":
@@ -433,7 +433,7 @@ else:
         q13 = int(7)
 
 
-    image_14 = Image.open(r"materials\q14.png")
+    image_14 = Image.open("materials/q14.png")
     st.image(image_14, use_column_width=True)
     q14 = st.selectbox("Q14：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q14 == "1：Ａに非常に近い":
@@ -452,7 +452,7 @@ else:
         q14 = int(7)
 
 
-    image_15 = Image.open(r"materials\q15.png")
+    image_15 = Image.open("materials/q15.png")
     st.image(image_15, use_column_width=True)
     q15 = st.selectbox("Q15：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q15 == "1：Ａに非常に近い":
@@ -471,7 +471,7 @@ else:
         q15 = int(7)
 
 
-    image_16 = Image.open(r"materials\q16.png")
+    image_16 = Image.open("materials/q16.png")
     st.image(image_16, use_column_width=True)
     q16 = st.selectbox("Q16：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q16 == "1：Ａに非常に近い":
@@ -490,7 +490,7 @@ else:
         q16 = int(7)
 
 
-    image_17 = Image.open(r"materials\q17.png")
+    image_17 = Image.open("materials/q17.png")
     st.image(image_17, use_column_width=True)
     q17 = st.selectbox("Q17：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q17 == "1：Ａに非常に近い":
@@ -509,7 +509,7 @@ else:
         q17 = int(7)
 
 
-    image_18 = Image.open(r"materials\q18.png")
+    image_18 = Image.open("materials/q18.png")
     st.image(image_18, use_column_width=True)
     q18 = st.selectbox("Q18：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q18 == "1：Ａに非常に近い":
@@ -527,7 +527,7 @@ else:
     else:
         q18 = int(7)
 
-    image_19 = Image.open(r"materials\q19.png")
+    image_19 = Image.open("materials/q19.png")
     st.image(image_19, use_column_width=True)
     q19 = st.selectbox("Q19：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q19 == "1：Ａに非常に近い":
@@ -546,7 +546,7 @@ else:
         q19 = int(7)
 
 
-    image_20 = Image.open(r"materials\q20.png")
+    image_20 = Image.open("materials/q20.png")
     st.image(image_20, use_column_width=True)
     q20 = st.selectbox("Q20：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q20 == "1：Ａに非常に近い":
@@ -565,7 +565,7 @@ else:
         q20 = int(7)
 
  
-    image_21 = Image.open(r"materials\q21.png")
+    image_21 = Image.open("materials/q21.png")
     st.image(image_21, use_column_width=True)
     q21 = st.selectbox("Q21：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q21 == "1：Ａに非常に近い":
@@ -584,7 +584,7 @@ else:
         q21 = int(7)
 
 
-    image_22 = Image.open(r"materials\q22.png")
+    image_22 = Image.open("materials/q22.png")
     st.image(image_22, use_column_width=True)
     q22 = st.selectbox("Q22：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q22 == "1：Ａに非常に近い":
@@ -603,7 +603,7 @@ else:
         q22 = int(7)
 
 
-    image_23 = Image.open(r"materials\q23.png")
+    image_23 = Image.open("materials/q23.png")
     st.image(image_23, use_column_width=True)
     q23 = st.selectbox("Q23：1～7から1つお選びください",["クリックして回答を選択ください","1：Ａに非常に近い","2：Ａにかなり近い","3：Ａにやや近い","4：どちらともいえない","5：Ｂにやや近い","6：Ｂにかなり近い","7：Ｂに非常に近い"])
     if q23 == "1：Ａに非常に近い":
@@ -648,7 +648,7 @@ else:
                                 'q_23' : int(q23)},index=['i',])
         dt_now = datetime.datetime.now()
         time = dt_now.strftime('%Y%m%d %H%M')        
-        df_clst.T.to_csv(str(desktop_path)+str(time) + str('-figure')  + str('-result.csv'))
+        df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
         '''
         あなたの欲求判定結果を確認するには、判定結果をONに変更してください。
         '''

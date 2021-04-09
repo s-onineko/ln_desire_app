@@ -163,7 +163,7 @@ if mode == "欲求フラグ判定結果":
     df_question = pd.read_csv(r"materials\question.csv", encoding = "cp932")
     df_table_view = pd.merge(df_question,df_table,how = "left", left_index=True,right_index=True)
     df_table_view = df_table_view.set_index('Number')
-    image_0 = Image.open(r"materials\rader_list.PNG")
+    image_0 = Image.open("materials/rader_list.PNG")
     st.image(image_0, use_column_width=True)
     st.table(df_table_view)
 

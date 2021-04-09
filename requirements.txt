@@ -2,5 +2,5 @@ streamlit
 Image
 pandas
 plotly.express
-plotly.graph_objs
+plotly
 matplotlib.pyplot

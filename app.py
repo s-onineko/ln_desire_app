@@ -106,7 +106,7 @@ if mode == "欲求フラグ判定結果":
         values2 = np.concatenate((values2, [values2[0]]))  # 閉じた多角形にする
         fig = plt.figure()
         #画像の読み込み
-        im = Image.open(r"materials\radar.png")
+        im = Image.open("materials/radar.png")
         #画像をarrayに変換
         im_list = np.asarray(im)
         #貼り付け

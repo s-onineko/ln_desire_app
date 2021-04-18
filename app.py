@@ -733,11 +733,11 @@ else:
             dl_link = custom_css + f'<a download="{download_filename}" id="{button_id}" href="data:file/txt;base64,{b64}">{button_text}</a><br></br>'
 
             return dl_link
-        
-        
         '''
-        入力結果をCSVファイルで出力します。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
-        '''
+        ダウンロードボタンを押すと回答結果が保存できます。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
+        '''        
+        download_button(df_clst.T, str('mydata.csv'), 'ダウンロード', pickle_it=False)
+
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')
 

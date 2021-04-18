@@ -718,31 +718,30 @@ else:
         #df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
         
 
-        if __name__ == '__main__':
-            if st.checkbox('Download object from memory'):
-                st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
+        if st.checkbox('Download object from memory'):
+            st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
 
-                # Enter text for testing
-                s = 'pd.DataFrame'
+            # Enter text for testing
+            s = 'pd.DataFrame'
 
-                filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
-                pickle_it = st.checkbox('Save as pickle file')
-                sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
-                                 'str': 'Hello Streamlit!',
-                                 'int': 17,
-                                 'float': 17.0,
-                                 'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
-                                 'bool': True,
-                                 'pd.DataFrame': df_clst}
-                sample_dtypes = sample_dtypes
+            filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
+            pickle_it = st.checkbox('Save as pickle file')
+            sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
+                             'str': 'Hello Streamlit!',
+                             'int': 17,
+                             'float': 17.0,
+                             'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
+                             'bool': True,
+                             'pd.DataFrame': df_clst}
+            sample_dtypes = sample_dtypes
 
-                # Display sample data
-                st.write(f'#### Sample `{s}` to be saved to `{filename}`')
-                st.code(sample_dtypes[s].T, language='python')
+            # Display sample data
+            st.write(f'#### Sample `{s}` to be saved to `{filename}`')
+            st.code(sample_dtypes[s].T, language='python')
 
-                # Download sample
-                download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
-                st.markdown(download_button_str, unsafe_allow_html=True)
+            # Download sample
+            download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+            st.markdown(download_button_str, unsafe_allow_html=True)
 
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

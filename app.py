@@ -739,12 +739,12 @@ if __name__ == '__main__':
                          'float': 17.0,
                          'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
                          'bool': True,
-                         'pd.DataFrame': df_clst.T}
+                         'pd.DataFrame': df_clst}
         sample_dtypes = sample_dtypes
 
         # Display sample data
         st.write(f'#### Sample `{s}` to be saved to `{filename}`')
-        #st.code(sample_dtypes[s], language='python')
+        st.code(sample_dtypes[s], language='python')
 
         # Download sample
         download_button_str = download_button(sample_dtypes, filename, f'Click here to download {filename}', pickle_it=pickle_it)

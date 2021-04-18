@@ -654,7 +654,7 @@ else:
             href = f'<a href="data:file/csv;base64,{b64}" download="captura.csv" target="_blank">Download csv file</a>'
             return href
         get_table_download_link_csv(df_clst.T)
-        st.markdown(get_table_download_link_csv(df_clst.T), unsafe_allow_html=True)
+        st.markdown(get_table_download_link_csv(df_clst), unsafe_allow_html=True)
         '''
         入力結果をCSVファイルで出力します。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
         '''

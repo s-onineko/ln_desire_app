@@ -733,11 +733,14 @@ if __name__ == '__main__':
         
         filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
 
-        # Pickle Rick
-        #pickle_it = st.checkbox('Save as pickle file')
-
-        sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
-        sample_dtypes = df_clst
+        sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
+                         'str': 'Hello Streamlit!',
+                         'int': 17,
+                         'float': 17.0,
+                         'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
+                         'bool': True,
+                         'pd.DataFrame': df_clst.T}
+        sample_dtypes = sample_dtypes
 
         # Display sample data
         st.write(f'#### Sample `{s}` to be saved to `{filename}`')

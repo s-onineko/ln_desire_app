@@ -654,24 +654,6 @@ else:
         
 
 def download_button(object_to_download, download_filename, button_text, pickle_it=False):
-    """
-    Generates a link to download the given object_to_download.
-    Params:
-    ------
-    object_to_download:  The object to be downloaded.
-    download_filename (str): filename and extension of file. e.g. mydata.csv,
-    some_txt_output.txt download_link_text (str): Text to display for download
-    link.
-    button_text (str): Text to display on download button (e.g. 'click here to download file')
-    pickle_it (bool): If True, pickle file.
-    Returns:
-    -------
-    (str): the anchor tag to download object_to_download
-    Examples:
-    --------
-    download_link(your_df, 'YOUR_DF.csv', 'Click to download data!')
-    download_link(your_str, 'YOUR_STRING.txt', 'Click to download text!')
-    """
     if pickle_it:
         try:
             object_to_download = pickle.dumps(object_to_download)
@@ -737,19 +719,6 @@ def file_selector(folder_path='.'):
 
 
 if __name__ == '__main__':
-    st.markdown("""
-                ## How to download files in Streamlit with download_button()
-                ~> Below are use cases and code examples for the `download_button()`
-                function, which returns a clickable download link given your data
-                file as input.
-                See the `Show code example` at the bottom of each section for a
-                code snippet you can copy & paste.
-                [Recommend improvements here](https://discuss.streamlit.io/)
-                The download_button() function is an extension of a workaround based on
-                the discussions covered in more detail at [Awesome Streamlit](http://awesome-streamlit.org/).
-                Go to Gallery -> Select the App Dropdown -> Choose "File Download Workaround"
-                for more information.""")
-
     st.markdown('-'*17)
 
 
@@ -760,15 +729,9 @@ if __name__ == '__main__':
         st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
 
         # Enter text for testing
-        s = st.selectbox('Select dtype', ['list',  # TODO: Add more
-                                          'str',
-                                          'int',
-                                          'float',
-                                          'dict',
-                                          'bool',
-                                          'pd.DataFrame'])
+        s = 'pd.DataFrame'
         
-        filename = st.text_input('Enter output filename and ext (e.g. my-dataframe.csv, my-file.json, my-list.txt)', 'my-file.json')
+        filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
 
         # Pickle Rick
         pickle_it = st.checkbox('Save as pickle file')

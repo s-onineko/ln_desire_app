@@ -688,8 +688,6 @@ else:
     else:
         q23 = int(7)
 
-    answer = st.button('回答結果を反映')
-    if answer == True:
     df_clst = pd.DataFrame({'q_1' : int(q1),
                             'q_2' : int(q2),
                             'q_3' : int(q3),

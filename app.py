@@ -654,28 +654,6 @@ else:
         
 
         def download_button(object_to_download, download_filename, button_text, pickle_it=False):
-            """
-            Generates a link to download the given object_to_download.
-
-            Params:
-            ------
-            object_to_download:  The object to be downloaded.
-            download_filename (str): filename and extension of file. e.g. mydata.csv,
-            some_txt_output.txt download_link_text (str): Text to display for download
-            link.
-            button_text (str): Text to display on download button (e.g. 'click here to download file')
-            pickle_it (bool): If True, pickle file.
-
-            Returns:
-            -------
-            (str): the anchor tag to download object_to_download
-
-            Examples:
-            --------
-            download_link(your_df, 'YOUR_DF.csv', 'Click to download data!')
-            download_link(your_str, 'YOUR_STRING.txt', 'Click to download text!')
-
-            """
             if pickle_it:
                 try:
                     object_to_download = pickle.dumps(object_to_download)
@@ -717,7 +695,6 @@ else:
                         border-style: solid;
                         border-color: rgb(230, 234, 241);
                         border-image: initial;
-
                     }} 
                     #{button_id}:hover {{
                         border-color: rgb(246, 51, 102);
@@ -733,11 +710,35 @@ else:
             dl_link = custom_css + f'<a download="{download_filename}" id="{button_id}" href="data:file/txt;base64,{b64}">{button_text}</a><br></br>'
 
             return dl_link
-        '''
-        ダウンロードボタンを押すと回答結果が保存できます。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
-        '''        
-        download_button(df_clst.T, str('mydata.csv'), 'ダウンロード', pickle_it=False)
-        dl_link
+
+
+        def file_selector(folder_path='.'):
+            filenames = os.listdir(folder_path)
+            selected_filename = st.selectbox('Select a file', filenames)
+            return os.path.join(folder_path, selected_filename)
+
+
+        if __name__ == '__main__':
+
+            # ---------------------
+            # Download from memory
+            # ---------------------
+            if st.checkbox('Download object from memory'):
+                st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
+
+                # Enter text for testing
+                filename = st.text_input('Enter output filename and ext (e.g. my-dataframe.csv)', 'my-file.csv')
+
+                # Pickle Rick
+                pickle_it = st.checkbox('Save as pickle file')
+
+                sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
+
+                # Download sample
+                download_button_str = download_button(df_clst.T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+                st.markdown(download_button_str, unsafe_allow_html=True)
+
+
 
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

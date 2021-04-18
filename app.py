@@ -778,15 +778,6 @@ if __name__ == '__main__':
         download_button_str = download_button(s, filename, f'Click here to download {filename}')
         st.markdown(download_button_str, unsafe_allow_html=True)
 
-        if st.checkbox('Show code example'):
-            code_text = f"""
-                        with open('{filename}', 'rb') as f:
-                            s = f.read()
-                        download_button_str = download_button(s, '{filename}', 'Click here to download {filename}')
-                        st.markdown(download_button_str, unsafe_allow_html=True)"""
-
-            st.code(code_text, language='python')
-
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')
 

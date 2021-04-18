@@ -710,7 +710,7 @@ else:
                             'q_20' : int(q20),
                             'q_21' : int(q21),
                             'q_22' : int(q22),
-                            'q_23' : int(q23)},index=['i',])
+                            'q_23' : int(q23)},index=['answer',])
     dt_now = datetime.datetime.now()
     time = dt_now.strftime('%Y%m%d %H%M')        
     #df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))

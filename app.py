@@ -727,12 +727,12 @@ else:
 
             # Pickle Rick
             pickle_it = st.checkbox('Save as pickle file')
-
             sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
 
             # Download sample
             download_button_str = download_button(df_clst.T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
             st.markdown(download_button_str, unsafe_allow_html=True)
+            print('xxxx')
 
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

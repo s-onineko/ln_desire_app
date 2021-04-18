@@ -737,7 +737,7 @@ if __name__ == '__main__':
         #pickle_it = st.checkbox('Save as pickle file')
 
         sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
-        sample_dtypes = {'pd.DataFrame': df_clst.T}
+        sample_dtypes = {'pd.DataFrame': df_clst}
 
         # Display sample data
         st.write(f'#### Sample `{s}` to be saved to `{filename}`')

@@ -41,7 +41,7 @@ def download_button(object_to_download, download_filename, button_text, pickle_i
             pass
 
         elif isinstance(object_to_download, pd.DataFrame):
-            object_to_download = object_to_download.to_csv(index=False)
+            object_to_download = object_to_download.to_csv(index=True)
 
         # Try JSON encode for everything else
         else:
@@ -717,7 +717,7 @@ else:
 
 
     if st.checkbox('Download object from memory'):
-        st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
+        st.write('ファイル名を入力後、ダウンロードボタンを押してください。ダウンロードしたファイルは「欲求フラグ判定結果」モードでレーダーチャートとして可視化できます。')
 
         # Enter text for testing
         s = 'pd.DataFrame'
@@ -732,10 +732,6 @@ else:
                          'bool': True,
                          'pd.DataFrame': df_clst}
         sample_dtypes = sample_dtypes
-
-        # Display sample data
-        st.write(f'#### Sample `{s}` to be saved to `{filename}`')
-        st.code(sample_dtypes[s].T, language='python')
 
         # Download sample
         download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=False)

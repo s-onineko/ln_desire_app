@@ -738,6 +738,3 @@ else:
         # Download sample
         download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=False)
         st.markdown(download_button_str, unsafe_allow_html=True)
-
-    #############################################
-

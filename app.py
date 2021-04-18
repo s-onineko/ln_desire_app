@@ -718,27 +718,21 @@ else:
             return os.path.join(folder_path, selected_filename)
 
 
-        if __name__ == '__main__':
+        if st.checkbox('Download object from memory'):
+            
+            st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
 
-            # ---------------------
-            # Download from memory
-            # ---------------------
-            if st.checkbox('Download object from memory'):
-                st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
+            # Enter text for testing
+            filename = st.text_input('Enter output filename and ext (e.g. my-dataframe.csv)', 'my-file.csv')
 
-                # Enter text for testing
-                filename = st.text_input('Enter output filename and ext (e.g. my-dataframe.csv)', 'my-file.csv')
+            # Pickle Rick
+            pickle_it = st.checkbox('Save as pickle file')
 
-                # Pickle Rick
-                pickle_it = st.checkbox('Save as pickle file')
+            sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
 
-                sample_df = pd.DataFrame({'x': list(range(10)), 'y': list(range(10))})
-
-                # Download sample
-                download_button_str = download_button(df_clst.T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
-                st.markdown(download_button_str, unsafe_allow_html=True)
-
-
+            # Download sample
+            download_button_str = download_button(df_clst.T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+            st.markdown(download_button_str, unsafe_allow_html=True)
 
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

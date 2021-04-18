@@ -737,6 +737,7 @@ else:
         ダウンロードボタンを押すと回答結果が保存できます。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
         '''        
         download_button(df_clst.T, str('mydata.csv'), 'ダウンロード', pickle_it=False)
+        dl_link
 
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

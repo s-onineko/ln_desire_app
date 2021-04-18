@@ -723,7 +723,7 @@ else:
         s = 'pd.DataFrame'
 
         filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
-        pickle_it = st.checkbox('Save as pickle file')
+        #pickle_it = st.checkbox('Save as pickle file')
         sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
                          'str': 'Hello Streamlit!',
                          'int': 17,
@@ -738,7 +738,7 @@ else:
         st.code(sample_dtypes[s].T, language='python')
 
         # Download sample
-        download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+        download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=False)
         st.markdown(download_button_str, unsafe_allow_html=True)
 
     #############################################

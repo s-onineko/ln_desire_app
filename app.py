@@ -732,7 +732,7 @@ if __name__ == '__main__':
         s = 'pd.DataFrame'
         
         filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
-
+        pickle_it = st.checkbox('Save as pickle file')
         sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
                          'str': 'Hello Streamlit!',
                          'int': 17,

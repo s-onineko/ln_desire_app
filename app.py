@@ -644,9 +644,19 @@ else:
                                 'q_23' : int(q23)},index=['i',])
         dt_now = datetime.datetime.now()
         time = dt_now.strftime('%Y%m%d %H%M')        
-        df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
+        #df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
+        
+        def get_table_download_link(df):
+        """Generates a link allowing the data in a given panda dataframe to be downloaded
+        in:  dataframe
+        out: href string
+        """
+        csv = df_clst.T.to_csv(index=False)
+        b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+        href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
+        
         '''
-        あなたの欲求判定結果を確認するには、判定結果をONに変更してください。
+        入力結果をCSVファイルで出力します。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
         '''
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

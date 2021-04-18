@@ -750,7 +750,7 @@ if __name__ == '__main__':
         st.code(sample_dtypes[s], language='python')
 
         # Download sample
-        download_button_str = download_button(df_clst.T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+        download_button_str = download_button(sample_dtypes[s], filename, f'Click here to download {filename}', pickle_it=pickle_it)
         st.markdown(download_button_str, unsafe_allow_html=True)
 
     else:

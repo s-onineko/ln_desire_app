@@ -716,7 +716,7 @@ else:
     #df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
 
 
-    if st.checkbox('Download object from memory'):
+    if st.checkbox('回答結果をダウンロードするにはチェックを入れてください'):
         st.write('ファイル名を入力後、ダウンロードボタンを押してください。ダウンロードしたファイルは「欲求フラグ判定結果」モードでレーダーチャートとして可視化できます。')
 
         # Enter text for testing

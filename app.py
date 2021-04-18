@@ -753,31 +753,6 @@ if __name__ == '__main__':
         download_button_str = download_button(sample_dtypes[s], filename, f'Click here to download {filename}', pickle_it=pickle_it)
         st.markdown(download_button_str, unsafe_allow_html=True)
 
-        if st.checkbox('Show code example '):
-            code_text = f"""
-                        s = {sample_dtypes[s]}
-                        download_button_str = download_button(s, '{filename}', 'Click here to download {filename}', pickle_it={pickle_it})
-                        st.markdown(download_button_str, unsafe_allow_html=True)"""
-
-            st.code(code_text, language='python')
-
-    # --------------------------
-    # Select a file to download
-    # --------------------------
-    if st.checkbox('Select a file to download'):
-        st.write('~> Use if you want to test uploading / downloading a certain file.')
-
-        # Upload file for testing
-        folder_path = st.text_input('Enter directory: deafult .', '.')
-        filename = file_selector(folder_path=folder_path)
-
-        # Load selected file
-        with open(filename, 'rb') as f:
-            s = f.read()
-
-        download_button_str = download_button(s, filename, f'Click here to download {filename}')
-        st.markdown(download_button_str, unsafe_allow_html=True)
-
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')
 

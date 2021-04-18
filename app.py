@@ -744,10 +744,10 @@ if __name__ == '__main__':
 
         # Display sample data
         st.write(f'#### Sample `{s}` to be saved to `{filename}`')
-        st.code(sample_dtypes[s], language='python')
+        st.code(sample_dtypes[s].T, language='python')
 
         # Download sample
-        download_button_str = download_button(sample_dtypes, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+        download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
         st.markdown(download_button_str, unsafe_allow_html=True)
 
     else:

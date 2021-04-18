@@ -646,18 +646,14 @@ else:
         time = dt_now.strftime('%Y%m%d %H%M')        
         #df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
         
-        #def get_table_download_link(df):
-        #    csv = df.T.to_csv(index=False)
-        #    b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-        #    href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
-        #get_table_download_link(df_clst)
-        #st.markdown(href, unsafe_allow_html=True)
-        
-        csv = df_clst.to_csv(index=False)
-        b64 = base64.b64encode(csv.encode()).decode()
-        st.markdown('### **⬇️ Download output CSV File **')
-        href = f'<a href="data:file/csv;base64,{b64}" download="myfilename.csv">Download csv file</a>'
-        st.markdown(href, unsafe_allow_html=True)
+        def get_table_download_link_csv(df):
+            #csv = df.to_csv(index=False)
+            csv = df.to_csv().encode()
+            #b64 = base64.b64encode(csv.encode()).decode() 
+            b64 = base64.b64encode(csv).decode()
+            href = f'<a href="data:file/csv;base64,{b64}" download="captura.csv" target="_blank">Download csv file</a>'
+            return href
+        st.markdown(get_table_download_link_csv(df_clst.T), unsafe_allow_html=True)
         '''
         入力結果をCSVファイルで出力します。ダウンロードしたファイルを用いて「欲求フラグ判定」にてレーダーチャートを確認できます。
         '''

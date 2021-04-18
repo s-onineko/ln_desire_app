@@ -653,102 +653,102 @@ else:
         #df_clst.T.to_csv(str(time) + str('-figure')  + str('-result.csv'))
         
 
-def download_button(object_to_download, download_filename, button_text, pickle_it=False):
-    if pickle_it:
-        try:
-            object_to_download = pickle.dumps(object_to_download)
-        except pickle.PicklingError as e:
-            st.write(e)
-            return None
+        def download_button(object_to_download, download_filename, button_text, pickle_it=False):
+            if pickle_it:
+                try:
+                    object_to_download = pickle.dumps(object_to_download)
+                except pickle.PicklingError as e:
+                    st.write(e)
+                    return None
 
-    else:
-        if isinstance(object_to_download, bytes):
-            pass
+            else:
+                if isinstance(object_to_download, bytes):
+                    pass
 
-        elif isinstance(object_to_download, pd.DataFrame):
-            object_to_download = object_to_download.to_csv(index=False)
+                elif isinstance(object_to_download, pd.DataFrame):
+                    object_to_download = object_to_download.to_csv(index=False)
 
-        # Try JSON encode for everything else
-        else:
-            object_to_download = json.dumps(object_to_download)
+                # Try JSON encode for everything else
+                else:
+                    object_to_download = json.dumps(object_to_download)
 
-    try:
-        # some strings <-> bytes conversions necessary here
-        b64 = base64.b64encode(object_to_download.encode()).decode()
+            try:
+                # some strings <-> bytes conversions necessary here
+                b64 = base64.b64encode(object_to_download.encode()).decode()
 
-    except AttributeError as e:
-        b64 = base64.b64encode(object_to_download).decode()
+            except AttributeError as e:
+                b64 = base64.b64encode(object_to_download).decode()
 
-    button_uuid = str(uuid.uuid4()).replace('-', '')
-    button_id = re.sub('\d+', '', button_uuid)
+            button_uuid = str(uuid.uuid4()).replace('-', '')
+            button_id = re.sub('\d+', '', button_uuid)
 
-    custom_css = f""" 
-        <style>
-            #{button_id} {{
-                background-color: rgb(255, 255, 255);
-                color: rgb(38, 39, 48);
-                padding: 0.25em 0.38em;
-                position: relative;
-                text-decoration: none;
-                border-radius: 4px;
-                border-width: 1px;
-                border-style: solid;
-                border-color: rgb(230, 234, 241);
-                border-image: initial;
-            }} 
-            #{button_id}:hover {{
-                border-color: rgb(246, 51, 102);
-                color: rgb(246, 51, 102);
-            }}
-            #{button_id}:active {{
-                box-shadow: none;
-                background-color: rgb(246, 51, 102);
-                color: white;
-                }}
-        </style> """
+            custom_css = f""" 
+                <style>
+                    #{button_id} {{
+                        background-color: rgb(255, 255, 255);
+                        color: rgb(38, 39, 48);
+                        padding: 0.25em 0.38em;
+                        position: relative;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: rgb(230, 234, 241);
+                        border-image: initial;
+                    }} 
+                    #{button_id}:hover {{
+                        border-color: rgb(246, 51, 102);
+                        color: rgb(246, 51, 102);
+                    }}
+                    #{button_id}:active {{
+                        box-shadow: none;
+                        background-color: rgb(246, 51, 102);
+                        color: white;
+                        }}
+                </style> """
 
-    dl_link = custom_css + f'<a download="{download_filename}" id="{button_id}" href="data:file/txt;base64,{b64}">{button_text}</a><br></br>'
+            dl_link = custom_css + f'<a download="{download_filename}" id="{button_id}" href="data:file/txt;base64,{b64}">{button_text}</a><br></br>'
 
-    return dl_link
-
-
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
+            return dl_link
 
 
-if __name__ == '__main__':
-    st.markdown('-'*17)
+        def file_selector(folder_path='.'):
+            filenames = os.listdir(folder_path)
+            selected_filename = st.selectbox('Select a file', filenames)
+            return os.path.join(folder_path, selected_filename)
 
 
-    # ---------------------
-    # Download from memory
-    # ---------------------
-    if st.checkbox('Download object from memory'):
-        st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
+        if __name__ == '__main__':
+            st.markdown('-'*17)
 
-        # Enter text for testing
-        s = 'pd.DataFrame'
-        
-        filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
-        pickle_it = st.checkbox('Save as pickle file')
-        sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
-                         'str': 'Hello Streamlit!',
-                         'int': 17,
-                         'float': 17.0,
-                         'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
-                         'bool': True,
-                         'pd.DataFrame': df_clst}
-        sample_dtypes = sample_dtypes
 
-        # Display sample data
-        st.write(f'#### Sample `{s}` to be saved to `{filename}`')
-        st.code(sample_dtypes[s].T, language='python')
+        # ---------------------
+        # Download from memory
+        # ---------------------
+        if st.checkbox('Download object from memory'):
+            st.write('~> Use if you want to save some data from memory (e.g. pd.DataFrame, dict, list, str, int)')
 
-        # Download sample
-        download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
-        st.markdown(download_button_str, unsafe_allow_html=True)
+            # Enter text for testing
+            s = 'pd.DataFrame'
+
+            filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
+            pickle_it = st.checkbox('Save as pickle file')
+            sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
+                             'str': 'Hello Streamlit!',
+                             'int': 17,
+                             'float': 17.0,
+                             'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
+                             'bool': True,
+                             'pd.DataFrame': df_clst}
+            sample_dtypes = sample_dtypes
+
+            # Display sample data
+            st.write(f'#### Sample `{s}` to be saved to `{filename}`')
+            st.code(sample_dtypes[s].T, language='python')
+
+            # Download sample
+            download_button_str = download_button(sample_dtypes[s].T, filename, f'Click here to download {filename}', pickle_it=pickle_it)
+            st.markdown(download_button_str, unsafe_allow_html=True)
 
     else:
         st.write('※入力後、回答結果を反映をクリックして確定してください')

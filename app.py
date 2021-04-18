@@ -739,7 +739,7 @@ if __name__ == '__main__':
                          'float': 17.0,
                          'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
                          'bool': True,
-                         'pd.DataFrame': df_clst.T}
+                         'pd.DataFrame': df_clst}
         sample_dtypes = sample_dtypes
 
         # Display sample data

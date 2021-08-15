@@ -235,9 +235,9 @@ if mode == "欲求フラグ判定結果":
     st.table(df_table_view)
     
     df_table_view = df_table_view.drop('設問', axis=1) 
-    df_table_view = df_table_view.rename(columns={'personal score': '個人スコア'})
-    df_table_view = df_table_view.rename(columns={'average score': '平均スコア'})
-    df_table_view = df_table_view.rename(columns={'Difference': '差分'})
+    df_table_view = df_table_view.rename(columns={'個人スコア':'personal score'})
+    df_table_view = df_table_view.rename(columns={'平均スコア':'average score'})
+    df_table_view = df_table_view.rename(columns={'差分':'Difference'})
     
        
     if st.checkbox('回答結果をダウンロードするにはチェックを入れてください'):

@@ -233,8 +233,30 @@ if mode == "欲求フラグ判定結果":
     image_0 = Image.open("materials/rader_list.PNG")
     st.image(image_0, use_column_width=True)
     st.table(df_table_view)
+    
+    if st.checkbox('回答結果をダウンロードするにはチェックを入れてください'):
+
+        # Enter text for testing
+        s = 'pd.DataFrame'
+
+        filename = st.text_input('Enter output filename and ext (e.g. data.csv, )', 'data.csv')
+        #pickle_it = st.checkbox('Save as pickle file')
+        sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
+                         'str': 'Hello Streamlit!',
+                         'int': 17,
+                         'float': 17.0,
+                         'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
+                         'bool': True,
+                         'pd.DataFrame': df_table_view}
+        sample_dtypes = sample_dtypes
+
+        # Download sample
+        download_button_str = download_button(sample_dtypes[s], filename, f'Click here to download {filename}', pickle_it=False)
+        st.markdown(download_button_str, unsafe_allow_html=True)
+    
     '''
     ***
+    '''
     '''
     if st.checkbox('データをダウンロードするにはチェックを入れてください'):
         #df_table_view = df_table_view.drop('設問', axis=1) 
@@ -258,6 +280,7 @@ if mode == "欲求フラグ判定結果":
         # Download sample
         download_button_str = download_button(sample_dtypes[s].T, f'Click here to download {filename}', pickle_it=False)
         st.markdown(download_button_str, unsafe_allow_html=True)
+     '''
 
 #============================================================================
 #                       1. 欲求判定設問（全23問）

@@ -237,7 +237,7 @@ if mode == "欲求フラグ判定結果":
     ***
     '''
     if st.checkbox('データをダウンロードするにはチェックを入れてください'):
-        df_table_view = df_table_view.drop('設問', axis=1) 
+        #df_table_view = df_table_view.drop('設問', axis=1) 
         df_table_view = df_table_view.rename(columns={'personal score': '個人スコア'})
         df_table_view = df_table_view.rename(columns={'average score': '平均スコア'})
         df_table_view = df_table_view.rename(columns={'Difference': '差分'})

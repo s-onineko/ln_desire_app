@@ -243,17 +243,11 @@ if mode == "欲求フラグ判定結果":
 
         filename = st.text_input('Enter output filename and ext (e.g. data.csv, )', 'data.csv')
         #pickle_it = st.checkbox('Save as pickle file')
-        sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
-                         'str': 'Hello Streamlit!',
-                         'int': 17,
-                         'float': 17.0,
-                         'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
-                         'bool': True,
-                         'pd.DataFrame': df_table_view.T}
+        sample_dtypes = {'pd.DataFrame': df_table_view.T}
         sample_dtypes = sample_dtypes
 
         # Download sample
-        download_button_str = download_button(sample_dtypes[s].T, filename, encoding = "shift-jis", f'Click here to download {filename}', pickle_it=False)
+        download_button_str = download_button(sample_dtypes[s].T, f'Click here to download {filename}', pickle_it=False)
         st.markdown(download_button_str, unsafe_allow_html=True)
 
 #============================================================================

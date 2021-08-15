@@ -236,12 +236,12 @@ if mode == "欲求フラグ判定結果":
     '''
     ***
     '''
-    if st.checkbox('数表をダウンロードするにはチェックを入れてください'):
+    if st.checkbox('データをダウンロードするにはチェックを入れてください'):
         
         # Enter text for testing
         s = 'pd.DataFrame'
 
-        filename = st.text_input('Enter output filename and ext (e.g. my-question.csv, )', 'my-question.csv')
+        filename = st.text_input('Enter output filename and ext (e.g. data.csv, )', 'data.csv')
         #pickle_it = st.checkbox('Save as pickle file')
         sample_dtypes = {'list': [1,'a', [2, 'c'], {'b': 2}],
                          'str': 'Hello Streamlit!',
@@ -249,7 +249,7 @@ if mode == "欲求フラグ判定結果":
                          'float': 17.0,
                          'dict': {1: 'a', 'x': [2, 'c'], 2: {'b': 2}},
                          'bool': True,
-                         'pd.DataFrame': df_table_view}
+                         'pd.DataFrame': df_table_view.T}
         sample_dtypes = sample_dtypes
 
         # Download sample

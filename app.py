@@ -240,7 +240,7 @@ if mode == "欲求フラグ判定結果":
     df_table_view = df_table_view.rename(columns={'差分':'Difference'})
     
        
-    if st.checkbox('回答結果をダウンロードするにはチェックを入れてください'):
+    if st.checkbox('数表をダウンロードするにはチェックを入れてください'):
 
         # Enter text for testing
         s = 'pd.DataFrame'
